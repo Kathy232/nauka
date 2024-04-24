@@ -11,12 +11,18 @@
 
 ## Opis komend, które wykonałam:
 
-#! /bin/bash
+`#! /bin/bash` - początek skryptu w Linuxie
 
-`cd /tmp`
-`mkdir skrypt1`
-`cp /var/log/syslog skrypt1`
-`cp /var/log/dmesg skrypt1`
-`df -h > skrypt1/zasoby.txt`
-`free -m >> skrypt1/zasoby.txt`
-`cat skrypt1/zasoby.txt`
+`cd /tmp` - przejście do /tmp
+
+`mkdir skrypt1` - utworzenie katalogu 
+
+`cp /var/log/syslog skrypt1` - skopiowanie syslog
+
+`cp /var/log/dmesg skrypt1` - skopiowanie dmesg
+
+`df -h > skrypt1/zasoby.txt` - zapisanie do pliku miejsca na dysku
+
+`free -m >> skrypt1/zasoby.txt` - zapisanie do tego samego pliku pamięci RAM
+
+`cat skrypt1/zasoby.txt` - wyświetlenie pliku 
