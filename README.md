@@ -9,4 +9,4 @@
 5. `cat test.txt` - Wyświetlenie zawartości pliku test.txt
 6. `rm test.txt` - Usunięcie pliku test.txt
 7. `mkdir .test_1` - Stworzenie nowego katalogu ukrytego test_1
-8. `rm -rf` - Usunięcie katalogu z jego zawartością
+8. `rm -rf .test_1` - Usunięcie katalogu z jego zawartością
