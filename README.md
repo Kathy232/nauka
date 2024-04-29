@@ -1,12 +1,8 @@
-# Mój trzeci skrypt
+# Moje zadanie domowe
 
-## Kroki do wykonania:
+## Wypisz komedny Linuxowe jakie znasz wraz z opisem przełączek:
 
-1. `cd / home`- Przejście do katalogu / home
-2. `ls -la` - Wyświetlenie zawartości katalogu, w którym się znajduję wraz z ukrytymi plikami i folderami
-3. `touch test.txt` -Stworzenie nowego pliku test.txt
-4. `vim test.txt` - Stworzenie treści w pliku test.txt z użyciem edytora VIM
-5. `cat test.txt` - Wyświetlenie zawartości pliku test.txt
-6. `rm test.txt` - Usunięcie pliku test.txt
-7. `mkdir .test_1` - Stworzenie nowego katalogu ukrytego test_1
-8. `rm -rf .test_1` - Usunięcie katalogu z jego zawartością
+1. `cd /home`- Przejście do katalogu /home
+2. `ls -la` - Wyświetlenie zawartości katalogu, w którym się znajduję. "-l" - wyświetla pliki w formie listy, "-a" - wyświetla ukryte pliki i katalogi.
+3. `touch nazwa_pliku` -Stworzenie nowego pliku z dowolnym rozszerzeniem bądz bez niego.
+4. `rm -rf nazwa_pliku/katalogu` - Usunięcie katalogu z jego zawartością, "-r" - usuwanie rekursywne, "-f" - brak potwierdzenia.
