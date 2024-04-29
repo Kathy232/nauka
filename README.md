@@ -1,8 +1,12 @@
-# Mój drugi skrypt
+# Mój trzeci skrypt
 
 ## Kroki do wykonania:
 
-1. `cd /tmp `- Przejście do katalogu /tmp
-2. `mkdir komendy_linuxowe` - Stworzenie katalogu komendy_linuxowe
-3. `touch komendy.txt` - Stworzenie pliku komendy.txt
-4. `cat komendy.txt `- Wyświetlenie zawartości pliku komendy.txt
+1. `cd / home`- Przejście do katalogu / home
+2. `ls -la` - Wyświetlenie zawartości katalogu, w którym się znajduję wraz z ukrytymi plikami i folderami
+3. `touch test.txt` -Stworzenie nowego pliku test.txt
+4. `vim test.txt` - Stworzenie treści w pliku test.txt z użyciem edytora VIM
+5. `cat test.txt` - Wyświetlenie zawartości pliku test.txt
+6. `rm test.txt` - Usunięcie pliku test.txt
+7. `mkdir .test_1` - Stworzenie nowego katalogu ukrytego test_1
+8. `rm -rf .test_1` - Usunięcie katalogu z jego zawartością
