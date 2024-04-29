@@ -6,3 +6,4 @@
 2. `ls -la` - Wyświetlenie zawartości katalogu, w którym się znajduję. "-l" - wyświetla pliki w formie listy, "-a" - wyświetla ukryte pliki i katalogi.
 3. `touch nazwa_pliku` -Stworzenie nowego pliku z dowolnym rozszerzeniem bądz bez niego.
 4. `rm -rf nazwa_pliku/katalogu` - Usunięcie katalogu z jego zawartością, "-r" - usuwanie rekursywne, "-f" - brak potwierdzenia.
+5. `pwd` - wyświetla pełną ścieżkę do obecnego katalogu, w którym się znajduje.
