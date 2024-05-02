@@ -10,3 +10,4 @@
 6. `cp -r` - kopiuje katalogi z zawartością, "cp" - kopiuje pliki i katalogi, "-r" - kopiowanie rekurencyjnie.
 7. `mv plik1 plik2` - zmiana nazwy pliku z plik1 na plik2.
 8. `mv plik1 ~/katalog1/` - przeniesienie pliku do katalog1 znajdującego się w katalogu domowym użytkownika.
+9. `man nazwa_polecenia` - pomaga w uzyskaniu pełnej dokumentacji lub instrukcji dla dowolnego polecenia lub narzędzia w systemie Linux.
