@@ -15,3 +15,7 @@
 11. `chmod -c u+rwx,g+rwx,o+r test.txt` - zmienia uprawnienia do pliku, "u+rwx" daje pełne prawa (odczyt, zapis, wykonanie) dla właściciela i grupy a także możliwość odczytu dla innych użytkowników.
 12. `apt update` - odświeża wszystkie dostępne paczki
 13. `chown -c` - pozwala na zmianę właściciela pliku, "-c" - zmienia właściciela i grupę dowiązania, będzie wypisywać na standardowe wyjście tylko te pliki, których właściciel i/lub grupa zostały zmienione.
+14. `rm przykładowy_plik`  - usuwa plik
+15. `exit`- komenda służąca do zakończenia procesu powłoki np.bash
+15. `ps` - wyświetla listę aktywnych procesów
+16. `history` - wyświetla historię użytych komend
