@@ -1,0 +1,232 @@
+smartctl 7.2 2020-12-30 r5155 [x86_64-linux-6.2.0-39-generic] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SSDPR-CL100-240-G3
+Serial Number:    GZE080026
+Firmware Version: SBFM61.5
+User Capacity:    240 057 409 536 bytes [240 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+TRIM Command:     Available
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-4 (minor revision not indicated)
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed May  8 22:20:20 2024 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(65535) seconds.
+Offline data collection
+capabilities: 			 (0x79) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  30) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   6) minutes.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   050    Pre-fail  Always       -       0
+  9 Power_On_Hours          0x0012   100   100   000    Old_age   Always       -       50
+ 12 Power_Cycle_Count       0x0012   100   100   000    Old_age   Always       -       79
+168 Unknown_Attribute       0x0012   100   100   000    Old_age   Always       -       0
+170 Unknown_Attribute       0x0003   100   100   000    Pre-fail  Always       -       216
+173 Unknown_Attribute       0x0012   100   100   000    Old_age   Always       -       1
+192 Power-Off_Retract_Count 0x0012   100   100   000    Old_age   Always       -       20
+194 Temperature_Celsius     0x0023   067   067   000    Pre-fail  Always       -       33 (Min/Max 33/33)
+218 Unknown_Attribute       0x000b   100   100   050    Pre-fail  Always       -       0
+231 Unknown_SSD_Attribute   0x0013   100   100   000    Pre-fail  Always       -       100
+241 Total_LBAs_Written      0x0012   100   100   000    Old_age   Always       -       221
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+SMART Selective self-test log data structure revision number 0
+Note: revision number not 1 implies that no selective self-test has ever been run
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+NAME                MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0                 7:0    0  63,9M  1 loop /snap/core20/2182
+loop1                 7:1    0     4K  1 loop /snap/bare/5
+loop2                 7:2    0  63,9M  1 loop /snap/core20/2264
+loop3                 7:3    0  74,2M  1 loop /snap/core22/1122
+loop4                 7:4    0  74,2M  1 loop /snap/core22/1380
+loop5                 7:5    0   6,4M  1 loop /snap/curl/1754
+loop6                 7:6    0 268,3M  1 loop /snap/firefox/4090
+loop7                 7:7    0 269,6M  1 loop /snap/firefox/4209
+loop8                 7:8    0 349,7M  1 loop /snap/gnome-3-38-2004/143
+loop9                 7:9    0   497M  1 loop /snap/gnome-42-2204/141
+loop10                7:10   0 505,1M  1 loop /snap/gnome-42-2204/176
+loop11                7:11   0  91,7M  1 loop /snap/gtk-common-themes/1535
+loop12                7:12   0  17,2M  1 loop /snap/helm/401
+loop13                7:13   0  17,2M  1 loop /snap/helm/403
+loop14                7:14   0  18,8M  1 loop /snap/k9s/155
+loop15                7:15   0    12M  1 loop /snap/kubectl/3206
+loop16                7:16   0    12M  1 loop /snap/kubectl/3233
+loop17                7:17   0  12,3M  1 loop /snap/snap-store/959
+loop18                7:18   0  39,1M  1 loop /snap/snapd/21184
+loop19                7:19   0  38,7M  1 loop /snap/snapd/21465
+loop20                7:20   0   476K  1 loop /snap/snapd-desktop-integration/157
+loop21                7:21   0   452K  1 loop /snap/snapd-desktop-integration/83
+loop22                7:22   0  90,8M  1 loop /snap/whatsapp-for-linux/58
+loop23                7:23   0  90,8M  1 loop /snap/whatsapp-for-linux/59
+sda                   8:0    0 223,6G  0 disk 
+├─sda1                8:1    0     1M  0 part 
+├─sda2                8:2    0   513M  0 part /boot/efi
+└─sda3                8:3    0 223,1G  0 part 
+  ├─vgubuntu-root   253:0    0 221,1G  0 lvm  /var/snap/firefox/common/host-hunspell
+  │                                           /
+  └─vgubuntu-swap_1 253:1    0   1,9G  0 lvm  [SWAP]
+/dev/mapper/vgubuntu-swap_1: UUID="24f93a87-d69d-406a-8f98-34c6fee8a21c" TYPE="swap"
+/dev/mapper/vgubuntu-root: UUID="51f4d2da-d78d-4d90-9a85-3b5cf0bf75ec" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/loop1: TYPE="squashfs"
+/dev/loop19: TYPE="squashfs"
+/dev/loop17: TYPE="squashfs"
+/dev/loop8: TYPE="squashfs"
+/dev/loop15: TYPE="squashfs"
+/dev/loop6: TYPE="squashfs"
+/dev/loop23: TYPE="squashfs"
+/dev/loop13: TYPE="squashfs"
+/dev/loop4: TYPE="squashfs"
+/dev/loop21: TYPE="squashfs"
+/dev/loop11: TYPE="squashfs"
+/dev/loop2: TYPE="squashfs"
+/dev/loop0: TYPE="squashfs"
+/dev/loop18: TYPE="squashfs"
+/dev/loop9: TYPE="squashfs"
+/dev/loop16: TYPE="squashfs"
+/dev/loop7: TYPE="squashfs"
+/dev/sda2: UUID="6453-FA00" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="b12535bc-4790-4532-ad94-e817651e3f41"
+/dev/sda3: UUID="VhQHj6-im4X-egRS-8at6-i00V-lMYe-w1lrsd" TYPE="LVM2_member" PARTUUID="fe8fad1f-b22b-460c-8b15-f04aafb3dc07"
+/dev/sda1: PARTUUID="91da788a-f5ed-47aa-8392-5644a20ec474"
+/dev/loop14: TYPE="squashfs"
+/dev/loop5: TYPE="squashfs"
+/dev/loop22: TYPE="squashfs"
+/dev/loop12: TYPE="squashfs"
+/dev/loop3: TYPE="squashfs"
+/dev/loop20: TYPE="squashfs"
+/dev/loop10: TYPE="squashfs"
+
+/dev/sda:
+
+ATA device, with non-removable media
+	Model Number:       SSDPR-CL100-240-G3                      
+	Serial Number:      GZE080026           
+	Firmware Revision:  SBFM61.5
+	Transport:          Serial, ATA8-AST, SATA 1.0a, SATA II Extensions, SATA Rev 2.5, SATA Rev 2.6, SATA Rev 3.0
+Standards:
+	Supported: 11 10 9 8 7 6 5 
+	Likely used: 11
+Configuration:
+	Logical		max	current
+	cylinders	16383	16383
+	heads		16	16
+	sectors/track	63	63
+	--
+	CHS current addressable sectors:    16514064
+	LBA    user addressable sectors:   268435455
+	LBA48  user addressable sectors:   468862128
+	Logical  Sector size:                   512 bytes
+	Physical Sector size:                   512 bytes
+	Logical Sector-0 offset:                  0 bytes
+	device size with M = 1024*1024:      228936 MBytes
+	device size with M = 1000*1000:      240057 MBytes (240 GB)
+	cache/buffer size  = unknown
+	Form Factor: 2.5 inch
+	Nominal Media Rotation Rate: Solid State Device
+Capabilities:
+	LBA, IORDY(can be disabled)
+	Queue depth: 32
+	Standby timer values: spec'd by Standard, no device specific minimum
+	R/W multiple sector transfer: Max = 16	Current = 16
+	DMA: mdma0 mdma1 mdma2 udma0 udma1 udma2 udma3 udma4 udma5 *udma6 
+	     Cycle time: min=120ns recommended=120ns
+	PIO: pio0 pio1 pio2 pio3 pio4 
+	     Cycle time: no flow control=120ns  IORDY flow control=120ns
+Commands/features:
+	Enabled	Supported:
+	   *	SMART feature set
+	    	Security Mode feature set
+	   *	Power Management feature set
+	   *	Write cache
+	   *	Look-ahead
+	   *	Host Protected Area feature set
+	   *	WRITE_BUFFER command
+	   *	READ_BUFFER command
+	   *	NOP cmd
+	   *	DOWNLOAD_MICROCODE
+	    	SET_MAX security extension
+	   *	48-bit Address feature set
+	   *	Device Configuration Overlay feature set
+	   *	Mandatory FLUSH_CACHE
+	   *	FLUSH_CACHE_EXT
+	   *	SMART error logging
+	   *	SMART self-test
+	   *	General Purpose Logging feature set
+	   *	WRITE_{DMA|MULTIPLE}_FUA_EXT
+	   *	WRITE_UNCORRECTABLE_EXT command
+	   *	{READ,WRITE}_DMA_EXT_GPL commands
+	   *	Segmented DOWNLOAD_MICROCODE
+	   *	Gen1 signaling speed (1.5Gb/s)
+	   *	Gen2 signaling speed (3.0Gb/s)
+	   *	Gen3 signaling speed (6.0Gb/s)
+	   *	Native Command Queueing (NCQ)
+	   *	Phy event counters
+	   *	READ_LOG_DMA_EXT equivalent to READ_LOG_EXT
+	   *	DMA Setup Auto-Activate optimization
+	    	Device-initiated interface power management
+	   *	Software settings preservation
+	   *	DOWNLOAD MICROCODE DMA command
+	   *	SET MAX SETPASSWORD/UNLOCK DMA commands
+	   *	WRITE BUFFER DMA command
+	   *	READ BUFFER DMA command
+	   *	DEVICE CONFIGURATION SET/IDENTIFY DMA commands
+	   *	Data Set Management TRIM supported (limit 8 blocks)
+Security: 
+	Master password revision code = 65534
+		supported
+	not	enabled
+	not	locked
+		frozen
+	not	expired: security count
+		supported: enhanced erase
+	20min for SECURITY ERASE UNIT. 60min for ENHANCED SECURITY ERASE UNIT.
+Checksum: correct
