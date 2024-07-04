@@ -47,3 +47,21 @@
     ('Kabel Ethernet', 'Cat 6', '10 Gbps', 'Sieci Ethernet');
 # 3. Wyświetlenie zawartości tabeli
 `SELECT` * `FROM` kable;
+
+## Aktualizacje i zmiany danych w w tabeli "laptopy".
+
+# 1. Dodanie nowego nagłówka ilosc_na_stanie i aktualizacja wartości dla każdego laptopa,
+1. `ALTER TABLE` laptopy
+`ADD COLUMN`ilosc_na_stanie INTEGER;
+# 2. Aktualizacja rekordów
+2. 
+`UPDATE` laptopy SET ilosc_na_stanie = 10 WHERE id = 1;   -- Aktualizacja dla ID=1
+`UPDATE` laptopy SET ilosc_na_stanie = 20 WHERE id = 2;   -- Aktualizacja dla ID=2
+`UPDATE` laptopy SET ilosc_na_stanie = 30 WHERE id = 3;   -- Aktualizacja dla ID=3
+`UPDATE` laptopy SET ilosc_na_stanie = 25 WHERE id = 4;   -- Aktualizacja dla ID=4
+`UPDATE` laptopy SET ilosc_na_stanie = 0 WHERE id = 5;    -- Aktualizacja dla ID=5
+# 3. Wyświetlenie zawartości tabeli
+3. `SELECT` * `FROM` laptopy;
+
+
+
