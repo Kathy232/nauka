@@ -28,6 +28,7 @@
 
 ## Przykład nr.2 - tworzenie tabeli z rodzajami kabli:
 
+# 1. Tworzenie nowej tabeli "kable"
 `CREATE TABLE` kable (
     id SERIAL `PRIMARY` KEY,
     rodzaj_kabla VARCHAR(50) `NOT NULL`,
@@ -36,6 +37,7 @@
     zastosowanie TEXT
 );
 
+# 2.  Dodawnie przykładowych rekordów ze specyfikacją kabli.
 `INSERT INTO` kable (rodzaj_kabla, typ, maksymalna_przepustowosc, zastosowanie)
 `VALUES`
     ('Kabel skrętka', 'UTP', '1 Gbps', 'Sieci LAN'),
@@ -43,6 +45,5 @@
     ('Kabel HDMI', 'High Speed HDMI', '18 Gbps', 'Transmisja audio-wideo'),
     ('Kabel USB', 'USB 3.0', '5 Gbps', 'Podłączanie urządzeń peryferyjnych'),
     ('Kabel Ethernet', 'Cat 6', '10 Gbps', 'Sieci Ethernet');
-
-`\dt`
+# 3. Wyświetlenie zawartości tabeli
 `SELECT` * `FROM` kable;
