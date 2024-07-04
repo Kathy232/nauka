@@ -1,18 +1,18 @@
-# Przykładowe tabele i komendy SQL oraz polecenia bazowe
+# Zadanie domowe - Stwórz przykładowe tabele i opisz wykorzystane komendy SQL.
 
 ## Tworzenie tabeli "laptopy" w PostgreSQL
 
 ### 1. Logowanie do PostgreSQL
 
-1. Aby zalogować się do PostgreSQL jako użytkownik `postgres` na lokalnym komputerze:
+1. Aby zalogować się do PostgreSQL jako użytkownik `postgres` na lokalnym komputerze używamy:
 
     ```bash
     psql -h localhost -U postgres -d twoja_nazwa_bazy_danych
     ```
 
-### 2. Tworzenie tabeli "laptopy"
+### 2. Tworzenie przykładowej tabeli o nazwie "laptopy"
 
-1. Aby stworzyć tabelę `laptopy` z odpowiednimi kolumnami:
+1. Aby stworzyć tabelę `laptopy` z odpowiednimi kolumnami używamy:
 
     ```sql
     CREATE TABLE laptopy (
@@ -27,7 +27,7 @@
 
 ### 3. Dodawanie przykładowych rekordów ze specyfikacją laptopów
 
-1. Aby dodać przykładowe rekordy do tabeli `laptopy`:
+1. Aby dodać przykładowe rekordy do tabeli `laptopy` używamy:
 
     ```sql
     INSERT INTO laptopy (model, rok_produkcji, pamiec_ram, przekatna_ekranu, procesor)
@@ -41,13 +41,13 @@
 
 ### 4. Wyświetlanie tabeli "laptopy"
 
-1. Aby sprawdzić istniejące tabele w bazie danych:
+1. Aby sprawdzić istniejące tabele w bazie danych używamy:
 
     ```sql
     \dt
     ```
 
-2. Aby wyświetlić wszystkie rekordy z tabeli `laptopy`:
+2. Aby wyświetlić wszystkie rekordy z tabeli `laptopy` używamy:
 
     ```sql
     SELECT * FROM laptopy;
@@ -55,7 +55,7 @@
 
 ---
 
-## Tworzenie tabeli "kable" z rodzajami kabli
+## Tworzenie przykładowej tabeli "kable" z rodzajami kabli
 
 ### 1. Tworzenie nowej tabeli "kable"
 
@@ -106,7 +106,7 @@
     ADD COLUMN ilosc_na_stanie INTEGER;
     ```
 
-### 2. Aktualizacja rekordów
+### 2. Aktualizacja rekordów - dodanie wartości
 
 1. Aby zaktualizować wartości kolumny `ilosc_na_stanie` w tabeli `laptopy`:
 
@@ -125,4 +125,3 @@
     ```sql
     SELECT * FROM laptopy;
     ```
-
