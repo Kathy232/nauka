@@ -1,36 +1,48 @@
 # Moje zadanie domowe
 
-## Wypisz komendy postgresowe i dockerowe jakie znasz wraz z opisem przełączek:
+## Stwórz przykładowe tabele w postgresie oraz napisz komendy użyte podczas tego zadania wraz z rozpisaniem krok po kroku całego procesu.
 
+# 1. Logowanie do PostgreSQL
 1. `psql -h localhost -U `- postgres łączy się z bazą danych PostgreSQL uruchomioną na lokalnym komputerze (localhost) jako użytkownik postgres,"-h" - określa host, z którym należy się połączyć. W tym przypadku jest to localhost, "-U" postgres - określa użytkownika, pod którym należy się zalogować czyli postgres.
-2. `sudo service postgresql start`- uruchamia usługę PostgreSQL, "sudo" pozwala uruchomić polecenie z uprawnieniami superużytkownika.
-3. `sudo service postgresql status`- Sprawdza bieżący stan usługi PostgreSQL (czy jest uruchomiona, zatrzymana itp.),"sudo" pozwala uruchomić polecenie z uprawnieniami superużytkownika.
-4. `sudo service postgresql stop`- zatrzymuje usługę PostgreSQL, service to narzędzie do zarządzania usługami systemowymi.
-5. `sudo -i -u postgres`- loguje się jako użytkownik postgres z uprawnieniami superużytkownika, "-i" - symuluje pełne logowanie, a "-u" zmienia użytkownika.
-6. `psql -U katarzyna`- łączy się z bazą danych PostgreSQL jako użytkownik katarzyna,
-"-U" - określa użytkownika, pod którym należy się zalogować - w tym przypadku jest to katarzyna.
-7. `CREATE TABLE`- tworzy nową tabelę.
-8. `DROP TABLE table_name`- usuwa istniejącą tabelę.
-9. `INSERT INTO` - wstawia nowe dane do tabeli.
-10. `SELECT * FROM table_name WHERE condition;`- pobiera wszystkie kolumny z określonej tabeli, ale tylko te rekordy, które spełniają określony warunek, "*" - oznacza, że chcemy by zostały wybrane wszystkie kolumny z tabeli.
-11. `\d`- wyświetla listę tabel w bieżącej bazie danych.
-12. `\dt`- zwraca tabele wraz z: schematem, do którego należą, oraz ich typem.
-13. `\d table_name`- wyświetla szczegółowe informacje o tabeli (kolumny, typy danych itp.)
-14. `\du`- wyświetla listę użytkowników (ról) w bazie danych.
-15. `\?`- wyświetla pomoc dotyczącą dostępnych komend meta.
-16. `\q`- zamyka sesję psql.
+# 2. Tworzenie nowej tabeli "laptopy"
+2. `CREATE TABLE` laptopy (
+    id SERIAL `PRIMARY` KEY,
+    model VARCHAR(50) `NOT NULL`,
+    rok_produkcji INT `NOT NULL`,
+    pamiec_ram INT `NOT NULL`,
+    przekatna_ekranu DECIMAL(3,1) `NOT NULL`,
+    procesor VARCHAR(50) `NOT NULL`
+    );`
+# 3. Dodawnie przykładowych rekordów ze specyfikacją laptopów.
+3. `INSERT INTO` laptopy (model, rok_produkcji, pamiec_ram, przekatna_ekranu, procesor)
+`VALUES`
+    ('HP Pavilion', 2021, 16, 15.6, 'Intel Core i7'),
+    ('Dell Inspiron', 2020, 8, 14.0, 'Intel Core i5'),
+    ('Lenovo ThinkPad', 2019, 16, 13.3, 'Intel Core i7'),
+    ('Acer Aspire', 2022, 8, 15.6, 'AMD Ryzen 5'),
+    ('Asus ZenBook', 2021, 16, 14.0, 'Intel Core i7');
+# 4. Wyświetlanie tabeli "laptopy".
+4. `\dt` 
+# 5. Wyświetlanie zawartości tabeli "laptopy".
+5. `SELECT` * `FROM` laptopy;
 
-### Komendy Dockerowe
+## Przykład nr.2 - tworzenie tabeli z rodzajami kabli:
 
-1. `docker run pgadmin4`- służy do uruchamiania nowego kontenera Dockerowego na podstawie określonego obrazu Dockerowego np. pgadmin4
-2. `docker ps -a`- wyświetla listę wszystkich aktualnie uruchomionych kontenerów Docker, "-a" powoduje, że wyświetla również zatrzymane kontenery.
-3. `docker stop CONTAINER_ID or CONTAINER_NAME` - zatrzymuje działający kontener.
-4. `docker start CONTAINER_ID or CONTAINER_NAME`- uruchamia ponownie zatrzymany kontener.
-5. `docker images`- wyświetla listę pobranych obrazów Dockerowych na lokalnym systemie.
-6. `docker compose up -d`- uruchamia wszystkie usługi zdefiniowane w pliku docker-compose.yml w trybie odłączonym (uruchomione w tle),  przełącznik "-d" lub --detach oznacza, że usługi będą uruchomione w trybie odłączonym - kontenery będą działać w tle, a terminal będzie nadal dostępny do innych operacji.
-7. `docker compose down` - zatrzymuje i usuwa wszystkie kontenery, sieci, woluminy oraz obrazy utworzone przez docker-compose up.
-8. `cd compose-postgres/` - zmienia katalog roboczy na compose-postgres/.
-9. `docker exec -it postgres_container psql -U postgres`- uruchamia polecenie psql -U postgres w uruchomionym kontenerze o nazwie postgres_container w trybie interaktywnym, "-it" umożliwia interaktywną pracę w terminalu.
-10. `docker image rm CONTAINER_ID or CONTAINER_NAME` - usuwa obraz Docker.
-11. `docker pull IMAGE_NAME` - pobiera obraz z Docker Hub lub innego repozytorium obrazów.
-12. `docker image ls`- wyświetla szczegółowe informacje o każdym obrazie Docker, w tym jego ID, nazwę, tag (wersję), rozmiar oraz kiedy został utworzony.
+`CREATE TABLE` kable (
+    id SERIAL `PRIMARY` KEY,
+    rodzaj_kabla VARCHAR(50) `NOT NULL`,
+    typ VARCHAR(50) `NOT NULL`,
+    maksymalna_przepustowosc VARCHAR(20) `NOT NULL`,
+    zastosowanie TEXT
+);
+
+`INSERT INTO` kable (rodzaj_kabla, typ, maksymalna_przepustowosc, zastosowanie)
+`VALUES`
+    ('Kabel skrętka', 'UTP', '1 Gbps', 'Sieci LAN'),
+    ('Kabel światłowodowy', 'Single-mode', '100 Gbps', 'Sieci WAN'),
+    ('Kabel HDMI', 'High Speed HDMI', '18 Gbps', 'Transmisja audio-wideo'),
+    ('Kabel USB', 'USB 3.0', '5 Gbps', 'Podłączanie urządzeń peryferyjnych'),
+    ('Kabel Ethernet', 'Cat 6', '10 Gbps', 'Sieci Ethernet');
+
+`\dt`
+`SELECT` * `FROM` kable;
