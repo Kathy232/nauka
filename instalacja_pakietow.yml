@@ -1,0 +1,15 @@
+---
+- name: Install multiple packages
+  hosts: nauka
+  become: yes
+  tasks:
+    - name: Install vim, net-tools, telnet, wget, and ncdu
+      apt:
+        name:
+          - vim
+          - net-tools
+          - telnet
+          - wget
+          - ncdu
+        state: present
+        update_cache: yes

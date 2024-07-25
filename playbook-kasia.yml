@@ -1,0 +1,6 @@
+---
+- name: Moj pierwszy Playbook
+  hosts: nauka
+  tasks:
+    - name: Sprawdzanie łączności z moimi serwerami
+      ping:

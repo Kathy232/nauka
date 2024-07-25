@@ -1,0 +1,16 @@
+---
+- name: Moj pierwszy skrypt 
+  hosts: nauka
+  become: true
+
+  tasks:
+    - name: Moja komenda bashowa
+      command: >
+        bash -c '
+          echo kasia idz spac
+        '
+      register: wynik_komendy
+
+    - name: Efekty komendy
+      debug:
+        var: wynik_komendy.stdout

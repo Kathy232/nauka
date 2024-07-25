@@ -1,0 +1,60 @@
+---
+- name: Create accounts RW with sudo su - 
+  hosts: nauka
+  become: true
+
+  vars:
+    users:
+      - username: "katarzyna"
+
+  tasks:
+    - name: Generate password using bash
+      command: >
+        bash -c '
+          head -c 500 /dev/urandom | tr -dc A-Za-z0-9 | grep -E "[a-z]" | grep -E "[A-Z]" | grep -E "[0-9]" | head -c 12 ; echo ""
+        '
+      register: generated_password
+
+    - name: Show passwords
+      debug:
+        var: generated_password.stdout
+
+    - name: Create user
+      ansible.builtin.user:
+        name: "{{ item.username }}"
+        state: present
+        password: "{{ generated_password.stdout | password_hash('sha512') }}"
+      with_items: "{{ users }}"
+      register: created_users
+
+    - name: Allow users to execute sudo su -
+      lineinfile:
+        path: "/etc/sudoers"
+        line: "{{ item.username }} ALL=(ALL) ALL"
+      with_items: "{{ users }}"
+      when: created_users|length > 0
+
+    - name: Display access details
+      debug:
+        msg: "Server: {{ inventory_hostname }} | User: {{ item.item.username }} | Password: {{ generated_password.stdout }}"
+      with_items: "{{ created_users.results }}"
+      no_log: true
+
+    - name: Create empty file if it doesn't exist
+      file:
+        path: "{{ playbook_dir }}/{{users[0].username}}.txt"
+        state: touch
+      delegate_to: localhost
+
+    - name: Create a report with credentials
+      lineinfile:
+        path: "{{ playbook_dir }}/{{users[0].username}}.txt"
+        line: "Server: {{ inventory_hostname }} | IP: {{ hostvars[inventory_hostname].ansible_host }} | User: {{ users[0].username }} | Password: {{ generated_password.stdout }}"
+      delegate_to: localhost
+
+    - name: Change user password on first login
+      ansible.builtin.shell:
+        cmd: "echo '{{ item.username }}:{{ generated_password.stdout }}' | chpasswd && chage -d 0 {{ item.username }}"
+      with_items: "{{ users }}"
+      when: created_users|length > 0
+      tags: test1
