@@ -1,4 +1,4 @@
---
+---
 - name: Install prometheus node-exporter 1.6.0 
   hosts: kasia
   become: true
