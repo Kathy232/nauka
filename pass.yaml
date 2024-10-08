@@ -1,6 +1,6 @@
 ---
 - name: Install prometheus node-exporter 1.6.0 
-  hosts: kasia
+  hosts: all
   become: true
 
   tasks:
@@ -19,6 +19,12 @@
         system: true
         shell: /bin/false
         home: /nonexistent
+
+
+    - name: Stop node_exporter service
+      ansible.builtin.systemd:
+        name: node_exporter
+        state: stopped
 
     - name: Download package & tar 
       command: |
